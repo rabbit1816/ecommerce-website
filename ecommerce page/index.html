@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern eCommerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Modern Store</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Our Store</h2>
+        <p>Discover the best products just for you.</p>
+        <button onclick="viewProducts()">Shop Now</button>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="product1.jpg" alt="Smartphone">
+                <p class="product-name">Smartphone</p>
+                <p class="product-description">Latest model with advanced features.</p>
+                <p class="product-price">$699.99</p>
+                <button onclick="addToCart('Smartphone', 699.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Laptop">
+                <p class="product-name">Laptop</p>
+                <p class="product-description">Powerful performance for work and play.</p>
+                <p class="product-price">$999.99</p>
+                <button onclick="addToCart('Laptop', 999.99)">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: $0.00</p>
+        <button onclick="showPaymentForm()">Proceed to Checkout</button>
+    </section>
+
+    <section id="payment" style="display: none;">
+        <h2>Payment Details</h2>
+        <form id="payment-form" onsubmit="processPayment(event)">
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" required>
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" required maxlength="16" pattern="\d{16}">
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required pattern="\d{2}/\d{2}">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required maxlength="3" pattern="\d{3}">
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: rabbit18162177@gmail.com</p>
+        <p>Phone: +91 9798024942</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
